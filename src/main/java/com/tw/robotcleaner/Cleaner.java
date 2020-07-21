@@ -1,7 +1,7 @@
 package com.tw.robotcleaner;
 
-import com.tw.robotcleaner.enums.Direction;
 import com.tw.robotcleaner.enums.Command;
+import com.tw.robotcleaner.enums.Direction;
 import java.util.Objects;
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,8 +1,8 @@
 package com.tw.robotcleaner;
 
 
-import com.tw.robotcleaner.enums.Direction;
 import com.tw.robotcleaner.enums.Command;
+import com.tw.robotcleaner.enums.Direction;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -21,15 +21,15 @@ public class MoveCommandTests extends BaseTest {
     final Room room = new Room(10, 15);
     final Cleaner cleaner = new Cleaner(2, 3, Direction.N, room);
     cleaner.move(Command.M);
-    assertCleaner(cleaner,2,4,Direction.N);
+    assertCleaner(cleaner, 2, 4, Direction.N);
   }
 
   @Test
-  public void testMoveSouthIfNotBlocked(){
-    final Room room = new Room(10,15);
-    final Cleaner cleaner = new Cleaner(2,3, Direction.S, room);
+  public void testMoveSouthIfNotBlocked() {
+    final Room room = new Room(10, 15);
+    final Cleaner cleaner = new Cleaner(2, 3, Direction.S, room);
     cleaner.move(Command.M);
-    assertCleaner(cleaner,2,2,Direction.S);
+    assertCleaner(cleaner, 2, 2, Direction.S);
   }
 
   @Test
@@ -37,7 +37,7 @@ public class MoveCommandTests extends BaseTest {
     final Room room = new Room(10, 15);
     final Cleaner cleaner = new Cleaner(2, 3, Direction.E, room);
     cleaner.move(Command.M);
-    assertCleaner(cleaner,3,3,Direction.E);
+    assertCleaner(cleaner, 3, 3, Direction.E);
   }
 
   @Test
@@ -45,7 +45,7 @@ public class MoveCommandTests extends BaseTest {
     final Room room = new Room(10, 15);
     final Cleaner cleaner = new Cleaner(2, 3, Direction.W, room);
     cleaner.move(Command.M);
-    assertCleaner(cleaner,1,3,Direction.W);
+    assertCleaner(cleaner, 1, 3, Direction.W);
   }
 
   @Test
@@ -53,7 +53,7 @@ public class MoveCommandTests extends BaseTest {
     final Room room = new Room(12, 15);
     final Cleaner cleaner = new Cleaner(12, 15, Direction.N, room);
     cleaner.move(Command.M);
-    assertCleaner(cleaner,12,15,Direction.N);
+    assertCleaner(cleaner, 12, 15, Direction.N);
   }
 
   @Test
@@ -61,7 +61,7 @@ public class MoveCommandTests extends BaseTest {
     final Room room = new Room(12, 15);
     final Cleaner cleaner = new Cleaner(0, 0, Direction.S, room);
     cleaner.move(Command.M);
-    assertCleaner(cleaner,0,0,Direction.S);
+    assertCleaner(cleaner, 0, 0, Direction.S);
   }
 
   @Test
@@ -69,7 +69,7 @@ public class MoveCommandTests extends BaseTest {
     final Room room = new Room(12, 15);
     final Cleaner cleaner = new Cleaner(12, 15, Direction.E, room);
     cleaner.move(Command.M);
-    assertCleaner(cleaner,12,15,Direction.E);
+    assertCleaner(cleaner, 12, 15, Direction.E);
   }
 
   @Test
@@ -77,7 +77,7 @@ public class MoveCommandTests extends BaseTest {
     final Room room = new Room(12, 15);
     final Cleaner cleaner = new Cleaner(0, 0, Direction.W, room);
     cleaner.move(Command.M);
-    assertCleaner(cleaner,0,0,Direction.W);
+    assertCleaner(cleaner, 0, 0, Direction.W);
   }
 
   @Test
