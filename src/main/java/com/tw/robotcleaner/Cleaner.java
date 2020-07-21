@@ -4,11 +4,9 @@ import com.tw.robotcleaner.enums.Command;
 import com.tw.robotcleaner.enums.Direction;
 import java.util.Objects;
 import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
 
-@Data
-@NoArgsConstructor
+@Getter
 @AllArgsConstructor
 public class Cleaner {
 
@@ -30,10 +28,10 @@ public class Cleaner {
 
     switch (s) {
       case L:
-        this.setDirection(this.getDirection().turnLeft());
+        this.direction = this.direction.turnLeft();
         break;
       case R:
-        this.setDirection(this.getDirection().turnRight());
+        this.direction = this.direction.turnRight();
         break;
       case M:
         if (Objects.isNull(this.getRoom())) {
@@ -41,20 +39,20 @@ public class Cleaner {
         }
         if (Direction.N.equals(this.getDirection()) && this.getY() < this.getRoom().getWidth()
             && this.getRoom().canMove(this.getX(), this.getY() + 1)) {
-          this.setY(this.getY() + 1);
+          this.y = this.getY() + 1;
         }
         if (Direction.S.equals(this.getDirection()) && this.getY() > 0 && this.getRoom()
             .canMove(this.getX(), this.getY() - 1)) {
-          this.setY(this.getY() - 1);
+          this.y = this.getY() - 1;
         }
         if (Direction.E.equals(this.getDirection()) && this.getX() < this.getRoom().getLength()
             && this.getRoom()
             .canMove(this.getX() + 1, this.getY())) {
-          this.setX(this.getX() + 1);
+          this.x = this.getX() + 1;
         }
         if (Direction.W.equals(this.getDirection()) && this.getX() > 0 && this.getRoom()
             .canMove(this.getX() - 1, this.getY())) {
-          this.setX(this.getX() - 1);
+          this.x = this.getX() - 1;
         }
         break;
     }

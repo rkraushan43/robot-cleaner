@@ -1,11 +1,10 @@
 package com.tw.robotcleaner;
 
 import java.util.Objects;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
+import lombok.Getter;
+
+@Getter
 public class Room {
 
   private int length;
@@ -17,12 +16,6 @@ public class Room {
   public Room(final int length, final int width) {
     this.length = length;
     this.width = width;
-  }
-
-  public Room(final int length, final int width, final Obstacle obstacle) {
-    this.length = length;
-    this.width = width;
-    this.setObstacle(obstacle);
   }
 
   public void setObstacle(final Obstacle obstacle) {
