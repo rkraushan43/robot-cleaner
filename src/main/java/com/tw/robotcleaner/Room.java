@@ -27,7 +27,7 @@ public class Room {
   }
 
   public boolean canMove(final int x, final int y) {
-    return Objects.isNull(obstacle) || (x != obstacle.getX() && y != obstacle.getY());
+    return Objects.isNull(obstacle) || x != obstacle.getX() || y != obstacle.getY();
   }
 
 }
