@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 public class ObstacleTests {
 
   @Test
-  public void testObstacle() {
+  public void testObstacleExists() {
     final Obstacle obstacle = new Obstacle(3, 4);
     assertEquals(obstacle.getX(), 3);
     assertEquals(obstacle.getY(), 4);
