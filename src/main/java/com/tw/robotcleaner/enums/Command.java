@@ -1,5 +1,5 @@
 package com.tw.robotcleaner.enums;
 
-public enum Signal {
+public enum Command {
   L, R, M;
 }
