@@ -10,10 +10,18 @@ import org.junit.jupiter.api.Test;
 public class ObstacleTests {
 
   @Test
-  public void testObstacleExists() {
+  public void testOneGridObstacleExists() {
     final Obstacle obstacle = new Obstacle(3, 4);
-    assertEquals(obstacle.getX(), 3);
-    assertEquals(obstacle.getY(), 4);
+    assertEquals(obstacle.getBottomX(), 3);
+    assertEquals(obstacle.getBottomY(), 4);
+  }
+  @Test
+  public void testMultiGridObstacleExists() {
+    final Obstacle obstacle = new Obstacle(1, 6,2,6);
+    assertEquals(obstacle.getBottomX(), 1);
+    assertEquals(obstacle.getBottomY(), 6);
+    assertEquals(obstacle.getTopX(), 2);
+    assertEquals(obstacle.getTopY(), 6);
   }
 
   @Test

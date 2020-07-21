@@ -31,10 +31,10 @@ public class CleanerTests extends BaseTest{
     cleaner.move(Command.M);
     assertCleaner(cleaner,1,3, Direction.N);
   }
-//  @Test
+  @Test
   public void testMultipleCommandsInput2(){
     final Room room = new Room(7, 7);
-    final Obstacle obstacle = new Obstacle(3, 5);
+    final Obstacle obstacle = new Obstacle(1, 6,2,6);
     room.setObstacle(obstacle);
     final Cleaner cleaner = new Cleaner(3, 6, Direction.N, room);
     cleaner.move(Command.M);
@@ -42,7 +42,7 @@ public class CleanerTests extends BaseTest{
     cleaner.move(Command.M);
     cleaner.move(Command.L);
     cleaner.move(Command.M);
-    assertCleaner(cleaner,3,5, Direction.S);
+    assertCleaner(cleaner,2,7, Direction.S);
 
   }
 }

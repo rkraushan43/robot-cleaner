@@ -1,7 +1,6 @@
 package com.tw.robotcleaner;
 
 import java.util.Objects;
-
 import lombok.Getter;
 
 @Getter
@@ -19,7 +18,7 @@ public class Room {
   }
 
   public void setObstacle(final Obstacle obstacle) {
-    if (obstacle.getX() > this.getLength() || obstacle.getY() > this.getWidth()) {
+    if (obstacle.getBottomX() > this.getLength() || obstacle.getBottomY() > this.getWidth()) {
       throw new IllegalArgumentException("Obstacle cannot be placed outside the room.");
     } else {
       this.obstacle = obstacle;
@@ -27,7 +26,8 @@ public class Room {
   }
 
   public boolean canMove(final int x, final int y) {
-    return Objects.isNull(obstacle) || x != obstacle.getX() || y != obstacle.getY();
+    return Objects.isNull(obstacle) || x < obstacle.getBottomX() || x > obstacle.getTopX()
+        || y < obstacle.getBottomY() || y > obstacle.getTopY();
   }
 
 }
